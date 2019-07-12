@@ -16,7 +16,7 @@ let store = createStore(
     rootReducer,
     compose(
         applyMiddleware(thunkMiddleware),
-        window.devToolsExtension ? window.devToolsExtension() : f => f // for redux dev tools
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )
 );
 

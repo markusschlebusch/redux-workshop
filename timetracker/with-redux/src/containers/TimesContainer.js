@@ -2,12 +2,6 @@ import {connect} from 'react-redux'
 import TimesList from '../components/TimesList/TimesList';
 import {addNewTime, loadTimesFromServer} from '../actions/TimeActions';
 
-class Times extends TimesList {
-    componentDidMount() {
-        this.props.onMount();
-    }
-}
-
 const mapStateToProps = (state) => {
     return {
         times: state.Times.entries,
@@ -27,4 +21,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Times);
+)(TimesList);
